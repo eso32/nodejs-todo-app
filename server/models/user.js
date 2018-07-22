@@ -33,7 +33,8 @@ var UserSchema = new mongoose.Schema({
 })
 
 //nadpisujemy funkcje moongose
-//funkcja wywoływana gdy mongoose zamienia wartośc na json
+//funkcja wywoływana gdy mongoose zamienia wartośc na json/
+//ograniczamy ilość danych przesyłanych do uzytkownika
 UserSchema.methods.toJSON = function(){
     var user = this;
     var userObject = user.toObject();

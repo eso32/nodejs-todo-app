@@ -4,8 +4,6 @@ var fs = require('fs'),
 
 var { pass, user, host } = JSON.parse(fs.readFileSync(configPath, 'UTF-8'));
 
-console.log("Kredki do logowania ", pass, user, host);
-
 mongoose.Promise = global.Promise;
 mongoose.connect(`mongodb://${user}:${pass}@${host}/${user}`);
 

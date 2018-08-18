@@ -49,7 +49,7 @@ UserSchema.methods.toJSON = function () {
 UserSchema.methods.generateAuthToken = function () {
     var user = this;
     var access = 'auth';
-    var token = jwt.sign({ _id: user._id.toHexString(), access }, 'moveittoconfig').toString();
+    var token = jwt.sign({ _id: user._id.toHexString(), access }, 'oveittoconfig').toString();
 
     user.tokens = user.tokens.concat([{
         access,
@@ -81,7 +81,7 @@ UserSchema.statics.findByToken = function (token) {
     var decoded;
 
     try {
-        decoded = jwt.verify(token, 'moveittoconfig');
+        decoded = jwt.verify(token, 'oveittoconfig');
     } catch (e) {
         // return new Promise((resolve, reject)=>{
         //     reject();
